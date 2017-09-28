@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<script src="/socket.io/socket.io.js"></script>
+	<script type="text/javascript" src="smoothie.js"></script>
+	<script>
+
+	/*
+	// open a connection to the serial server:
+		var socket = io.connect('http://192.168.2.191:8080');
+		 socket.on('serialEvent', function(data){
+//	document.write(data)
+	document.getElementById("textDisplay").innerText = data;
+	});
+	*/	
+	</script>
+	</head>
+	<body>
+	<div id="textDisplay">Hello</p>
+	<canvas id="mycanvas" width="400" height="100"></canvas>	
+	<script>
+	var smoothie = new SmoothieChart();
+	var datalog = new Timeseries();
+
+	smoothie.streamTo(document.getElementById("mycanvas"));
+	</script>
+	</body>
+<footer>
+	<script>
+        // open a connection to the serial server:
+                var socket = io.connect('http://192.168.2.191:8080');
+                 socket.on('serialEvent', function(data){
+//      document.write(data)
+        document.getElementById("textDisplay").innerText = data;
+        });
+
+        </script>
+
+</footer>
+</html>
+
